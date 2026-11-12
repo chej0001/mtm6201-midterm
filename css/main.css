@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Lato:wght@400;700;900&display=swap');
 
 /* Base styles - mobile first */
+/* I used CSS variables to keep my website colors in one place so I can change them easily. */
 :root {
     --black: #000000;
     --white: #ffffff;
@@ -26,11 +27,13 @@ body {
     line-height: 1.6;
 }
 
+/* I used max-width to keep images inside their containers on different screen sizes. */
 img {
     display: block;
     max-width: 100%;
 }
 
+/* I used a container to keep the content centered and leave space on both sides of the page. */
 .container {
     width: min(100% - 40px, 1200px);
     margin-inline: auto;
@@ -58,6 +61,7 @@ h2 {
 }
 
 /* Header and navigation */
+/* I used Flexbox to organize the logo and navigation links and control the space between them. */
 .site-header {
     background: var(--black);
     padding: 20px 0;
@@ -74,6 +78,7 @@ h2 {
     width: 180px;
 }
 
+/* I used Flexbox to organize the navigation links, add space between them, and let them wrap on smaller screens. */
 .nav-links {
     display: flex;
     justify-content: center;
