@@ -28,6 +28,11 @@ body {
 }
 
 /* I used max-width to keep images inside their containers on different screen sizes. */
+/* AI assistance:
+I asked for help understanding responsive images.
+AI explained how max-width: 100% keeps images
+from becoming wider than their containers.
+*/
 img {
     display: block;
     max-width: 100%;
@@ -62,6 +67,11 @@ h2 {
 
 /* Header and navigation */
 /* I used Flexbox to organize the logo and navigation links and control the space between them. */
+/* AI assistance:
+I asked for help understanding Flexbox navigation.
+AI explained how display: flex, flex-direction,
+and gap control the arrangement of the links.
+*/
 .site-header {
     background: var(--black);
     padding: 20px 0;
@@ -424,6 +434,11 @@ a:focus-visible {
         transition: none;
     }
 }
+/* AI assistance:
+I asked for help adjusting the SVG icon sizes.
+The goal was to make the three offer icons
+look consistent in the layout.
+*/
 .offer-icon {
     width: 80px !important;
     height: 80px !important;
