@@ -1,328 +1,421 @@
 
-/* Basic page styles */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Lato:wght@400;700;900&display=swap');
+
+/* Base styles - mobile first */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --cream: #f3f0e9;
+    --gold: #d69e3d;
+    --text: #333333;
+}
+
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f3f0e9;
-    color: #333;
-}
-
-/* Header and navigation */
-header {
-    background-color: #000;
-    padding: 20px 0;
-}
-
-nav {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-nav img {
-    width: 180px;
-}
-
-nav ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-/* Main hero section */
-.hero {
-    min-height: 500px;
-    background-image:
-        linear-gradient(rgba(0,0,0,0.55),
-        rgba(0,0,0,0.55)),
-        url("../images/hero-background.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero-content {
-    max-width: 650px;
-    color: white;
-}
-
-.hero h1 {
-    font-size: 42px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+    color: var(--text);
+    background: var(--cream);
     line-height: 1.6;
-    margin-bottom: 35px;
 }
 
-.btn {
-    display: inline-block;
-    background-color: white;
-    color: black;
-    padding: 15px 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 13px;
-}
-
-/* Mobile navigation */
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-}
-
-/* Hero background and text */
-.hero {
-    min-height: 500px;
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-    ), url("../images/hero-background.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero-content {
-    color: white;
-    max-width: 650px;
-    padding: 20px;
-}
-
-/* Coffee gallery section */
-.coffee-gallery {
-    padding: 70px 20px;
-    text-align: center;
-    background-color: #f3f0e9;
+img {
+    display: block;
+    max-width: 100%;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: min(100% - 40px, 1200px);
+    margin-inline: auto;
+}
+
+h1, h2, h3, nav {
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
 .section-label {
-    font-size: 14px;
+    color: var(--gold);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* Header and navigation */
+.site-header {
+    background: var(--black);
+    padding: 20px 0;
+}
+
+.site-header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--gold);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 2px solid var(--white);
+    background: var(--white);
+    color: var(--black);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--white);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* Hero */
+.hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 80px 0;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("../images/hero-background.jpg") center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin: 0 auto 32px;
+    max-width: 620px;
+}
+
+/* Gallery */
+.coffee-gallery {
+    padding: 70px 0;
+    text-align: center;
 }
 
 .coffee-gallery h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto 35px;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 250px;
+    height: 180px;
     object-fit: cover;
-    display: block;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.gallery-grid img:first-child {
+    grid-column: 1 / -1;
+    height: 250px;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .coffee-gallery h2 {
-        font-size: 26px;
-    }
+/* What we offer */
+.offers {
+    padding: 70px 0;
+    text-align: center;
+    background: var(--white);
 }
 
-/* About Us section */
+.offers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 45px;
+}
+
+.offer-item {
+    padding: 15px;
+}
+
+.offer-item h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.offer-item p {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+/* Menu and locations */
+.menu-section,
+.locations {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 80px 0;
+    color: var(--white);
+}
+
+.menu-section {
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("../images/coffee-beans.jpeg") center / cover no-repeat;
+}
+
+.locations {
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("../images/coffee-shop.jpeg") center / cover no-repeat;
+}
+
+.menu-section h2,
+.locations h2 {
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+
+/* About */
 .about {
-    padding: 80px 20px;
-    background-color: #ffffff;
+    padding: 75px 0;
+    background: var(--white);
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 35px;
     align-items: center;
 }
 
 .about-image img {
     width: 100%;
-    height: 400px;
+    height: 350px;
     object-fit: cover;
 }
 
 .about-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .about-content p {
-    line-height: 1.8;
-}
-
-/* Mobile About Us */
-@media (max-width: 600px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-image img {
-        height: auto;
-    }
-}
-
-/* Menu section */
-.menu-section {
-    padding: 80px 20px;
-    background-color: #f3f0e9;
-    text-align: center;
-}
-
-.menu-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.menu-item {
-    background-color: white;
-    padding-bottom: 25px;
-}
-
-.menu-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.menu-item h3 {
-    font-size: 22px;
-    margin: 20px 0 10px;
-}
-
-.menu-item p {
-    padding: 0 15px;
-    line-height: 1.6;
-}
-
-/* Responsive menu */
-@media (max-width: 900px) {
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* Locations section */
-.locations {
-    padding: 80px 20px;
-    background-color: #ffffff;
-    text-align: center;
-}
-
-.locations h2 {
-    font-size: 36px;
     margin-bottom: 20px;
 }
 
-.locations p {
-    line-height: 1.8;
-    margin-bottom: 25px;
+.about-content .btn {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
 }
-/* Footer styles */
-.footer {
-    background-color: #000;
-    color: white;
+
+.about-content .btn:hover,
+.about-content .btn:focus-visible {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 0;
     text-align: center;
-    padding: 25px 20px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.testimonials blockquote {
+    margin: 0;
+    padding: 30px 25px;
+    background: var(--white);
+}
+
+.testimonials blockquote p {
+    margin: 0 0 20px;
+}
+
+.testimonials blockquote footer {
+    font-weight: 700;
+}
+
+/* Footer */
+.footer {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 20px;
 }
 
 .footer p {
     margin: 0;
-    font-size: 14px;
 }
 
-/* Navigation spacing */
-.header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.header nav > div {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-@media (max-width: 600px) {
-    .header nav {
-        flex-direction: column;
-        gap: 15px;
+/* Tablet */
+@media (min-width: 768px) {
+    .site-header nav {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    .header nav > div {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    .nav-links {
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .gallery-grid img,
+    .gallery-grid img:first-child {
+        grid-column: auto;
+        height: 240px;
+    }
+
+    .offers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1100px) {
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .gallery-grid img {
+        height: 280px;
+    }
+
+    .about-image img {
+        height: 500px;
+    }
+
+    .menu-section,
+    .locations {
+        min-height: 480px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn,
+    .nav-links a {
+        transition: none;
     }
 }
